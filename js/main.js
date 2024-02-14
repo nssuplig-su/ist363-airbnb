@@ -44,16 +44,7 @@ function renderProperties(properties) {
   }); // end of forEach
 }
 
-fetch("./js/properties.json")
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    // console.log(data);
-    renderProperties(data);
-  });
-
-fetch("/js/properties.json")
+fetch("js/properties.json")
   .then((response) => {
     if (!response.ok) {
       throw new Error("Network response was not ok");
@@ -67,10 +58,3 @@ fetch("/js/properties.json")
   .catch((error) => {
     console.error("There was a problem fetching the properties data:", error);
   });
-
-// inside the .then() method
-const cabins = data.filter((room) => {
-  return room.type === "Cabin";
-});
-// instead of rendering all the properties, we'll render the filtered properties
-renderProperties(cabins);
