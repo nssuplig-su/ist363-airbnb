@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "start-server": "http-server -p 3000",
+    "watch-sass": "sass --watch sass/style.scss:css/style.css",
+    "start": "npm-run-all --parallel start-server watch-sass"
+  },
   "devDependencies": {
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
