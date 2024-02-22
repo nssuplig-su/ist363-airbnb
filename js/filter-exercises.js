@@ -9,7 +9,7 @@ const filteredNumbers = numbers.filter((number) => {
   return number < 10;
 }); // end of filter
 
-console.log({ filteredNumbers });
+//console.log({ filteredNumbers });
 
 const people = [
   { name: "John", age: 25 },
@@ -24,7 +24,7 @@ const filteredPeople = people.filter((person) => {
   return person.age < 30;
 }); //end of filter
 
-console.log({ filteredPeople });
+//console.log({ filteredPeople });
 
 const cars = [
   { make: "Ford", model: "Fusion", year: 2019 },
@@ -39,4 +39,23 @@ const filteredCars = cars.filter((car) => {
   return car.make == "Ford";
 }); // end of filter
 
-console.log({ filteredCars });
+//console.log({ filteredCars });
+
+//example 4
+const filterGames = (games, monthIndex) => {
+  const filteredGames = games.filter((game) => {
+    const dateObject = new Date(game.date);
+    return dateObject.getMonth() == monthIndex;
+  });
+  console.log({ filteredGames });
+};
+
+fetch("js/schedule.json")
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    //console.log({ data });
+    filterGames(data, 1);
+  })
+  .catch(); //promise
