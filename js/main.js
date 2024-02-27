@@ -3,6 +3,7 @@
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 const closeBtn = document.getElementById("closeBtn");
+const contentDiv = document.getElementById("content");
 
 // "event name", callback function
 menuBtn.addEventListener("click", function () {
@@ -74,5 +75,5 @@ const displayCategory = (category, properties) => {
     sectionElement.appendChild(articleElement);
   });
 
-  document.body.appendChild(sectionElement);
+  contentDiv.appendChild(sectionElement);
 }; // end of displayCategory
